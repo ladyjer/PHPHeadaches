@@ -75,3 +75,47 @@
    * php.ini
    *
    */
+
+  /*
+   * In computing, Server Application Programming Interface (SAPI) is the direct module interface
+   * to web servers such as the Apache HTTP Server, Microsoft IIS, and Oracle iPlanet Web Server.
+   * Microsoft also uses the term Internet Server Application Programming Interface (ISAPI),
+   * and the defunct Netscape web server used the term Netscape Server Application Programming
+   * Interface (NSAPI) for the same purpose.[1] In other words, SAPI is actually an application
+   * programming interface (API) provided by the web server to help other developers in extending
+   * the web server capabilities.
+   * As an example, PHP has a direct module interface called SAPI for different web servers;[2]
+   * in case of PHP 5 and Apache 2.0 on Windows, it is provided in form of a DLL file called
+   * php5apache2.dll,[3] which is a module that, among other functions, provides an interface
+   *  between PHP and the web server, implemented in a form that the server understands. This
+   * form is what is known as a SAPI.
+   * There are different kinds of SAPIs for various web server extensions.
+   * For example, another two SAPIs for the PHP language are Common Gateway
+   * Interface (CGI) and command-line interface (CLI).[2][4]
+   *
+   * If you run your own server go the module way, it's somewhat faster.
+   * If you're on a shared server the decision has already been taken for you,
+   * usually on the CGI side. The reason for this are filesystem permissions.
+   * PHP as a module runs with the permissions of the http server (usually 'apache')
+   * and unless you can chmod your scripts to that user you have to chmod them to 777 -
+   * world readable. This means, alas, that your server neighbour can take a look at them -
+   * think of where you store the database access password. Most shared servers have solved
+   * this using stuff like phpsuexec and such, which run scripts with the permissions of the
+   * script owner, so you can (must) have your code chmoded to 644. Phpsuexec runs only with
+   * PHP as CGI - that's more or less all, it's just a local machine thing -
+   * makes no difference to the world at large.
+   *
+   * When using CGI : a PHP process is launched by Apache,
+   * and it is that PHP process that interprets PHP code -- not Apache itself.
+   * In theory, a distinct PHP process has to be created for each request --
+   * which makes things slower : Apache has more work to do to answer a request.
+   * Well, as pointed out by @AlReece45 in a comment, this can be made better using FastCGI)
+   * When using PHP as an Apache module (mod_php, or mod_php5), the PHP interpreter
+   * is kind of "embedded" inside the Apache process : there is no external PHP process.
+   * Which means :
+   * No forking to answer a request (faster)
+   * Better communication between Apache and PHP
+   * Generally speaking, I would say that mod_php is the solution that's used the most.
+   *
+   * PHP in modalità MOD usa + memoria
+   */
