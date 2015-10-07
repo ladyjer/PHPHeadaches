@@ -36,4 +36,10 @@ HTML commentato-->
   <p></p> <!-- this <p> is a comment -->
   <p>quattro</p>
   */
+
+  /*
+   * The "one-line" comment styles only comment to the end of the line or the current block of PHP code,
+   * whichever comes first. This means that HTML code after // ... ?> or # ... ?> WILL be printed: ?>
+   * breaks out of PHP mode and returns to HTML mode, and // or # cannot influence that
+   */
 ?>
