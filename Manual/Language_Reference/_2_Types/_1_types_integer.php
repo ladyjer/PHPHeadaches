@@ -15,6 +15,9 @@
   */
  //$error = 08;//PHP Parse error:  Invalid numeric literal (with PHP 7)
  echo "Value : " . $error, "\n"; //with PHP 5 value : 0
+ /*
+  * Hanno uniformato il comportamento con PHP 7
+  */
 
  /*
   * If PHP encounters a number beyond the bounds of the integer type,
@@ -22,7 +25,7 @@
   * results in a number beyond the bounds of the integer type
   * will return a float instead.
   */
- if (is_double(PHP_INT_MAX+1)) echo "It's double!\n";
+ if (is_float(PHP_INT_MAX+1)) echo "It's float!\n"; //double is an alias of float
 
  echo gettype(10/2), "\n"; //integer
  echo gettype(10/3), "\n"; //double
@@ -42,3 +45,6 @@
 
  echo (int) (3.7), "\n"; //3
  echo round(3.7); //4
+
+ $a = (int) new stdClass();  //Notice: Object of class stdClass could not be converted to int
+ echo $a, "...."; //1....

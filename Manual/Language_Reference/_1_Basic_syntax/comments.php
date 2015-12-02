@@ -1,11 +1,3 @@
-<?php
-/**
- * Created by IntelliJ IDEA.
- * User: ladyj
- * Date: 23/09/15
- * Time: 23.29
- */
-?>
 <!-- commentone
 <?php echo "HTML commentato"; ?>
 -->
