@@ -23,7 +23,7 @@ echo strspn("42 is the answer to the 128th question.", "1234567890", 24, 3), "\n
 echo strspn("42 is the answer to the 128th question.", "1234567890", -13), "\n";//1
 
 
-//Find length of initial segment not matching mask
+//Find length of initial segment not matching mask (offset e lunghezza)
 echo strcspn("42 is the answer to the 128th question.", "1234567890"), "\n";//0
 echo strcspn("42 is the answer to the 128th question.", "1234567890", 23), "\n";//1
 echo strcspn("42 is the answer to the 128th question.", "1234567890", 24, 2), "\n";//0
