@@ -31,10 +31,6 @@ var_dump($matches);
  */
 
 // La lettera "i" dopo i delimitatori indica una ricerca case-insensitive
-// matcha solo il primo
-// If matches is provided, then it is filled with the results of search.
-// $matches[0] will contain the text that matched the full pattern,
-// $matches[1] will have the text that matched the first captured parenthesized subpattern, and so on.
 if (preg_match("/php/i", "PHP è il linguaggio scelto, php er meglio.", $matches))
 {
 	echo "Il riconoscimento è avvenuto."; //vero
