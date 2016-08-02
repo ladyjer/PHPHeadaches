@@ -51,4 +51,3 @@
  var_dump(PHP_SESSION_NONE);//1 Since PHP 5.4.0. Return value of session_status() if sessions are enabled, but no session exists.
  var_dump(PHP_SESSION_ACTIVE);//2 Since PHP 5.4.0. Return value of session_status() if sessions are enabled, and a session exists.
  var_dump(session_status());//1 quindi il sistema delle sessioni è attivo ma non esiste alcuna sessione
-
