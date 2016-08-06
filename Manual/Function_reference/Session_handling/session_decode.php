@@ -57,7 +57,7 @@ echo session_module_name();//files
 bool session_regenerate_id ([ bool $delete_old_session = false ] )
 session_regenerate_id() will replace the current session id with a new one, and keep the current session information.
  */
-session_regenerate_id();
+session_regenerate_id(); //Il contenuto delle variabili viene mantenuto. cambia solo l'ID
 echo session_name(); //Nome del cookie, PHPSESSID
 echo session_id(), "\n";//trtcb3aa7kur6m4rmla4me94n7
 var_dump($_SESSION);
