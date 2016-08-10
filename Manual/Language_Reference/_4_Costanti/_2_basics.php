@@ -1,6 +1,6 @@
 <?php
 /**
- * cose_strane.php
+ * _2_basics.php
  *
  * PHP version 5
  *
@@ -13,18 +13,21 @@
  * @link       http://www.ladyj.eu
  */
 
-class a {
-	public $val = 10;
-}
 
-function render(a $a) {
-	return $a->$val;//Fatal error: Cannot access empty property 
-}
+define ('CIAO', 'BAU');
+define ('RICIAO', CIAO.' '.CIAO);
 
-render(new a);
+const CIRICIAO = 'RICIAO';//. "....";//DA PARSE ERROR CON <=5.5 FUNZIONA DAL 5.6 IN POI
 
-class T {
-	const A = 42 +1;
-}
+echo CIAO, RICIAO, CIRICIAO;//BAUBAU BAURICIAO
 
-echo T::A;
+$altro=<<<X
+CIAO
+X;
+
+define('ALTRO', $altro);//CIAO
+echo ALTRO;
+
+/*
+ * Funziona con heredow e nowdoc se non contengono variabili
+ */
