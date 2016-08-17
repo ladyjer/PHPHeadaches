@@ -46,6 +46,8 @@ Since PHP 5, new returns a reference automatically,
 
  //If you assign a reference to a variable declared global inside a function,
  //the reference will be visible only inside the function. You can avoid this by using the $GLOBALS array.
+ // Praticamente la variabile locale smette di puntare alla global e punta a qualcosa d'altro
+ // di conseguenza non modifica + la globale.
  function non_fa_casino() {
      global $var1, $var2;
      echo $var1,'-',$var2,PHP_EOL; //ciao-bau
@@ -62,6 +64,7 @@ Since PHP 5, new returns a reference automatically,
      echo $var1,'-',$var2,PHP_EOL; //ciao-bau
      $GLOBALS['var1'] =& $var2;
      echo $var1,'-',$var2,PHP_EOL; //ciao-bau (sembra un errore ma è così, non cambia)
+     echo $GLOBALS['var1'],'-',$var2,PHP_EOL; //bau-bau
  }
 
  fa_casino();
