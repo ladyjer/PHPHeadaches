@@ -15,7 +15,7 @@
 ?>
 CIAO
 <?php
-/**********************AGGIUNGO AUTOLOAD ***/
+/***** AGGGIUNGO AUTOLOAD ********/
 function carica($classname) {
     include_once __DIR__.DIRECTORY_SEPARATOR.'a.php';
 }
