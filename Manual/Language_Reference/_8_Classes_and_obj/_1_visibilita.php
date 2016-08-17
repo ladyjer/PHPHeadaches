@@ -68,6 +68,13 @@ $y->test();//Y 10 20 10
 
 /*
  * Mi sarei aspettata 20 20 10 ma a questo punto non è così....
- * Se un qualcosa nel contensto della classe che sta eseguendo il codice è privato
- * e il codice usa quella variabile privata, viene presa quella locale
+ * Posso dargli un senso prendendo spunto da questo paragrafo del manuale PHP:
+ *
+ * For example, when you extend a class, the subclass inherits all of the public and
+ * protected methods from the parent class. Unless a class overrides those methods,
+ * they will retain their original functionality.
+ *
+ * Praticamente metodi e proprietà private non possono essere sovrascritti. Quindi
+ * il PHP nemmeno di prova ad andare a controllare se nella classe effettiva dell'oggetto
+ * esiste un override, sembra che ci sia invece non c'è
  */
