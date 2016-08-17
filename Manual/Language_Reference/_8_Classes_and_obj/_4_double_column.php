@@ -1,6 +1,6 @@
 <?php
 /**
- * _1_visibilita.php
+ * _3_double_column.php
  *
  * PHP version 5
  *
@@ -12,22 +12,14 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  * @link       http://www.ladyj.eu
  */
-
-class a {
-	private function ciao() {
-		echo 'BAU';
-	}
-
-	public function saluta() {
-		$this->ciao();
-	}
+class MyClass {
+	const CONST_VALUE = 'A constant value';
 }
 
-class b extends a {
-	private function ciao() {
-		echo 'MIAO';
-	}
-}
+$x = new MyClass;
+echo $x::CONST_VALUE;//A constant value
+echo $x->CONST_VALUE;//<b>Notice</b>:  Undefined property: MyClass::$CONST_VALUE in
 
-$b = new b;
-$b->saluta();//BAU
+/*
+ * Da notare che cerca $CONST_VALUE con $ davanti!
+ */

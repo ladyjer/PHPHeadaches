@@ -11,15 +11,40 @@
  * @copyright  Copyright © 2016 Colombo Mariella
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  * @link       http://www.ladyj.eu
- */
-class MyClass {
-	const CONST_VALUE = 'A constant value';
+ *
+ *
+ * Scope Resolution Operator (::)
+ *
+ */class A
+{
+	function foo()
+	{
+		if (isset($this)) {
+			echo '$this è definito (';
+			echo get_class($this);
+			echo ")\n";
+		} else {
+			echo "\$this non è definito\n";
+		}
+	}
 }
 
-$x = new MyClass;
-echo $x::CONST_VALUE;//A constant value
-echo $x->CONST_VALUE;//<b>Notice</b>:  Undefined property: MyClass::$CONST_VALUE in
+class B
+{
+	function bar()
+	{
+		// Nota: la seguente operazione darà luogo ad un segnale di Warning se E_STRICT è abilitato.
+		A::foo();
+	}
+}
 
-/*
- * Da notare che cerca $CONST_VALUE con $ davanti!
- */
+$a = new A();
+$a->foo();//$this è definito (A)
+
+// Nota: la seguente operazione darà luogo ad un segnale di Warning se E_STRICT è abilitato.
+A::foo();//$this non è definito
+$b = new B();
+$b->bar();//$this è definito (B)
+
+// Nota: la seguente operazione darà luogo ad un segnale di Warning se E_STRICT è abilitato.
+B::bar();//$this non è definito

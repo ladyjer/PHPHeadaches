@@ -1,6 +1,6 @@
 <?php
 /**
- * _1_visibilita.php
+ * _8_make_class_callable.php
  *
  * PHP version 5
  *
@@ -12,22 +12,19 @@
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  * @link       http://www.ladyj.eu
  */
-
-class a {
-	private function ciao() {
-		echo 'BAU';
-	}
-
-	public function saluta() {
-		$this->ciao();
+class CallableClass
+{
+	public function __invoke($x)
+	{
+		var_dump($x);
 	}
 }
+$obj = new CallableClass;
+$obj(5);
+var_dump(is_callable($obj));
 
-class b extends a {
-	private function ciao() {
-		echo 'MIAO';
-	}
-}
+/*
+int 5
 
-$b = new b;
-$b->saluta();//BAU
+boolean true
+*/

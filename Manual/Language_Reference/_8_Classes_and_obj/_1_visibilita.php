@@ -76,5 +76,6 @@ $y->test();//Y 10 20 10
  *
  * Praticamente metodi e proprietà private non possono essere sovrascritti. Quindi
  * il PHP nemmeno di prova ad andare a controllare se nella classe effettiva dell'oggetto
- * esiste un override, sembra che ci sia invece non c'è
+ * esiste un override, sembra che ci sia invece non c'è. E usa quelli della classe corrente (il padre)
+ * a prescindere.
  */
