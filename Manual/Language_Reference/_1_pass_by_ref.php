@@ -22,3 +22,13 @@ $z =
 	new stdClass;
 f($z);
 var_dump($z);//int (42))
+
+function c(stdClass $x = NULL)
+{
+	$x = 42;
+}
+
+$z =
+	new stdClass;
+c($z);
+var_dump($z);//object(stdClass)[1]
