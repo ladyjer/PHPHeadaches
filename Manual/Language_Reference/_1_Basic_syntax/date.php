@@ -17,5 +17,5 @@
 setlocale(LC_TIME, 'it_IT.utf8');
 
 echo date('l', time());//Wednesday
-echo strftime('%A', time());//mercoledìWednesday
+echo strftime('%A', time());//mercoledi
 echo gmmktime(0,0,0,1,1,1970);//0
