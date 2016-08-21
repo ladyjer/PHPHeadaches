@@ -29,5 +29,5 @@ class b extends a {
 $b = new b;
 $b->canta();//b CANTA???
 /*
- * Fatal error: Access level to b::$name must be protected (as in class a) or weaker
+ * Fatal error: Access level to b::$name must be protected (as in class a) or weaker (alla linea 27, chisura del } della classe)
  */

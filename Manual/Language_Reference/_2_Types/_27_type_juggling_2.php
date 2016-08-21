@@ -11,6 +11,8 @@
  * @copyright  Copyright © 2016 Colombo Mariella
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  * @link       http://www.ladyj.eu
+ *
+ * SE LE STRINGHE SONO PURAMENTE NUMERICHE, VENGONO TRADOTTE IN INTERI
  */
 $a = "1";
 $b = "01";
@@ -20,6 +22,13 @@ if ($a == $b) {
 }
 else {
 	echo "b";
+}
+
+if ($a == "01B") {
+	echo "a";
+}
+else {
+	echo "falso";//echoes falsooooo!!!
 }
 
 $a = "1";
